@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Roboto+Mono&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #28282B;
+    text-align: center;
+
+}
+
+#container-pokemons {
+    display: grid;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+.pokemonCard {
+    position: relative;
+    width: 300px;
+    height: 180px;
+}
+
+
+.container-pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #ffffff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .8s;
+}
+
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+.container-pokemon-img {
+    background-image: url(./blob.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-pokemon-img img {
+    width: 120px;
+    height: 120px;
+}
+
+.container-pokemon .tag {
+    margin: 0;
+    font-size: 20px;
+    color: #CCCBD0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.pokemon-name {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.container-pokemon-back {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    border-radius: 12px;
+    background-color: #ffffff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .8s;
+}
+.back {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.container-pokemon-img-back img {
+    width: 120px;
+    height: 120px;
+}
+
+.stats-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: auto;
+}
+.stats-container p{
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    padding: 3px;
+}
+
+.pokemonCard:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+.pokemonCard:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+#pagination {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.button {
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    padding-top: 2px;
+}
+
+#previous {
+    cursor: pointer;
+    color: #f8f7f8;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#next {
+    cursor: pointer;
+    color: #f8f7f8;
+    font-size: 2.5em;
+    font-weight: bold;
+}
